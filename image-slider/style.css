@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  background-color: #000;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header {
+  width: 114rem;
+  max-width: 80%;
+  margin: auto;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 9999;
+}
+
+header a:not(:last-child) {
+  margin-right: 4rem;
+}
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -5rem;
+  position: relative;
+}
+
+.carousel .list .item {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.carousel .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel .list .item .content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 114rem;
+  max-width: 80%;
+  padding-right: 30%;
+  color: #fff;
+  text-shadow: 0 0.5rem 1rem #0004;
+}
+
+.carousel .list .item .content .author {
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.carousel .list .item .content .title,
+.carousel .list .item .content .topic {
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.carousel .list .item .content .topic {
+  color: #f1683a;
+}
+
+.carousel .list .item .content .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 13rem);
+  grid-template-rows: 4rem;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.carousel .list .item .content button {
+  border: none;
+  background-color: #eee;
+  letter-spacing: 0.3rem;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.carousel .list .item .content button:nth-child(2) {
+  background-color: transparent;
+  color: #eee;
+  border: 0.1rem solid #eee;
+}
+
+/* Thumbnail */
+.thumbnail {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 2rem;
+}
+
+.thumbnail .item {
+  width: 15rem;
+  height: 22rem;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.thumbnail .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.thumbnail .item .content {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+}
+
+.thumbnail .item .content .title {
+  font-weight: bold;
+}
+
+/* Arrows */
+.arrows {
+  position: absolute;
+  top: 80%;
+  right: 52%;
+  width: 30rem;
+  max-width: 30%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrows button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #eee4;
+  border: none;
+  font-family: monospace;
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.arrows button:hover {
+  background-color: #eee;
+  color: #555;
+}
+
+/* make the 1st elm active */
+.carousel .list .item:nth-child(1) {
+  z-index: 1;
+}
+
+.carousel .list .item:nth-child(1) .author,
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .topic,
+.carousel .list .item:nth-child(1) .description,
+.carousel .list .item:nth-child(1) .buttons {
+  transform: translateY(5rem);
+  filter: blur(2rem);
+  opacity: 0;
+  animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.carousel .list .item:nth-child(1) .title {
+  animation-delay: 1.2s;
+}
+
+.carousel .list .item:nth-child(1) .topic {
+  animation-delay: 1.4s;
+}
+
+.carousel .list .item:nth-child(1) .description {
+  animation-delay: 1.6s;
+}
+
+.carousel .list .item:nth-child(1) .buttons {
+  animation-delay: 1.8s;
+}
+
+/* next click effect */
+.carousel.next .list .item:nth-child(1) img {
+  width: 15rem;
+  height: 22rem;
+  position: absolute;
+  left: 50%;
+  bottom: 5rem;
+  border-radius: 2rem;
+  animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1) {
+  width: 0;
+  overflow: hidden;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+  to {
+    width: 15rem;
+  }
+}
+
+.carousel.next .thumbnail {
+  transform: translateX(15rem);
+  animation: transformThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes transformThumbnail {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* prev click effect */
+.carousel.prev .list .item:nth-child(2) {
+  z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage {
+  to {
+    width: 15rem;
+    height: 22rem;
+    border-radius: 2rem;
+    left: 50%;
+    bottom: 5rem;
+  }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(2) .author,
+.carousel.prev .list .item:nth-child(2) .title,
+.carousel.prev .list .item:nth-child(2) .topic,
+.carousel.prev .list .item:nth-child(2) .description,
+.carousel.prev .list .item:nth-child(2) .buttons {
+  animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut {
+  to {
+    transform: translateY(-15rem);
+    filter: blur(2rem);
+    opacity: 0;
+  }
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button {
+  pointer-events: none;
+}
+
+/* time */
+.time {
+  width: 0%;
+  height: 5px;
+  background-color: #f1683a;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time {
+  width: 100%;
+  animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning {
+  to {
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .carousel .list .item .content {
+    padding-right: 0;
+  }
+  .carousel .list .item .content .title {
+    font-size: 3rem;
+  }
+}
