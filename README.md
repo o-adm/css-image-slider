@@ -1,2 +1,2 @@
-# css-image-slider
-Carousel Image Slider (HTML - CSS - JS)
+# Frontend Code Snippet
+1 -  Carousel Image Slider (HTML - CSS - JS)
