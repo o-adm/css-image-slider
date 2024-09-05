@@ -1,0 +1,130 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  background-color: #ccc;
+  color: #333;
+  line-height: 1.7;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+.heading-primary {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background-image: linear-gradient(to right bottom, rgba(0, 141, 207, 0.8), rgba(46, 147, 194, 0.8));
+  background-clip: text;
+  color: transparent;
+  border-bottom: 0.3rem solid #008dcf;
+  transition: transform 0.3s; }
+  .heading-primary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2); }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.subscription-card {
+  width: 114rem;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.card {
+  background-color: #fff;
+  width: 35rem;
+  min-height: 50rem;
+  height: max-content;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  text-align: center;
+  margin-left: 1.8rem;
+  overflow: hidden;
+  position: relative; }
+  .card__popular {
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    border-radius: 0 0 0 1.5rem; }
+  .card.active {
+    background-color: #008dcf;
+    transform: scale(1.1); }
+    .card.active > *:not(.btn) {
+      color: #fff; }
+  .card__plan {
+    text-align: center;
+    padding: 2rem 0; }
+    .card__plan-name {
+      font-size: 2.5rem; }
+      .card__plan-name--1 {
+        color: #ffd900; }
+      .card__plan-name--2 {
+        color: #fff; }
+      .card__plan-name--3 {
+        color: orangered; }
+    .card__plan-price {
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      .card__plan-price span:nth-child(1) {
+        font-size: 4rem;
+        font-weight: 600; }
+  .card__details {
+    padding: 1rem 2rem;
+    text-align: left; }
+    .card__details li {
+      font-size: 1.4rem; }
+      .card__details li:not(:last-child) {
+        padding-bottom: 1.5rem; }
+  .card .checkmark {
+    margin-right: 1rem;
+    font-size: 2rem;
+    color: red; }
+
+@media (min-width: 788px) and (max-width: 1380px) {
+  html {
+    font-size: 50%; } }
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  width: 15rem;
+  border-radius: 1rem; }
+  .btn--white {
+    background-color: #fff;
+    color: #2e93c2;
+    border: 0.18rem solid #2e93c2; }
+  .btn--black {
+    background-color: trasparent;
+    color: #000;
+    border: 0.18rem solid #000; }
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  margin: 0 0 4rem 0; }

@@ -1,0 +1,40 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  background-color: $background-main;
+  color: $color-text;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.heading-primary {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-blue, 0.8),
+    rgba($color-blue-text, 0.8)
+  );
+  background-clip: text;
+  color: transparent;
+  border-bottom: 0.3rem solid $color-blue;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0 1rem 2.5rem rgba($color-black, 0.2);
+  }
+}

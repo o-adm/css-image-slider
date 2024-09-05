@@ -1,0 +1,14 @@
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  width: 15rem;
+  border-radius: 1rem;
+
+  &--white {
+    @include btn-color($color-white, $color-blue-text);
+  }
+
+  &--black {
+    @include btn-color(trasparent, $color-black);
+  }
+}
